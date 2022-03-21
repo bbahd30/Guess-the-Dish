@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,600;1,600&display=swap');
+
+:root
+{
+    --seablue: #17A2B8;
+    --violet: #551a8b;
+    --lavender: #8a96da;
+}
+
+*{
+    padding: 0;
+    margin: 0%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+*::selection
+{
+    background-color: var(--seablue);
+    color: white;
+}
+body, .ans input, button
+{
+    font-family: 'Josefin Sans', sans-serif;
+}
+header
+{
+    top:0;
+    left: 0; 
+    right: 0;
+    color: var(--violet);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px;
+    box-shadow: 0.5rem 1rem 2rem rgba(0,0,0,.1);
+    font-size: 15px;
+}
+header .logo 
+{
+    color: var(--violet);
+    font-size: 35px;
+    font-weight: bolder;
+    animation: logoAni 2s ease-in-out 1;
+}
+@keyframes logoAni
+{
+    from
+    {
+        letter-spacing: 40px;
+    }
+    to
+    {
+        letter-spacing: 0;
+    }
+}
+header .navigation a
+{
+    margin-right: 50px;
+}
+header .navigation a:hover
+{
+    color: var(--seablue);
+}
+
+
+
+.writeUp
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.container
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.container::before
+{
+    z-index: -1000;
+    content: '';
+    position: absolute;
+    width: 2000px;
+    height: 2000px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, white, var(--seablue));
+    transform: translateY(-50%);
+    top: -10;
+    right: 48%;
+    transition: 3s ease-in-out forward;
+}
+.content
+{
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    top: 50%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    /****************************/
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr;
+    /****************************/
+}
+.content h1
+{
+    margin-top: 10px;
+    color: var(--seablue);
+    animation: head1 2s ease-in-out 1 forwards;
+}
+@keyframes head1
+{   
+    from
+    {
+        font-size:40px;
+    }
+    to 
+    {
+        font-size: 70px;
+        font-weight: bolder;
+    }
+}
+.content h3
+{
+    font-size: 30px;
+    color: var(--seablue);
+}
+.content h2
+{
+    font-size: 40px;
+    color: var(--violet);
+    margin-top: 20px;
+}
+
+.Gdescription
+{
+    position: absolute;
+    top: 25%;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+    left: 75%;
+    transform:  translate(-50%, -50%);
+    width: 40%;
+    display: grid;
+    grid-template-columns: 1fr;
+    z-index: 5;
+}
+
+.Gdescription h3
+{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--seablue);
+    font-size: 40px;
+}
+.Gdescription h2
+{
+    font-size: 30px;
+    color: var(--violet);
+    margin-top: 10px;
+}
+.swap
+{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+.img
+{
+    width: 70%;
+    height: 40%;
+    box-sizing: border-box;
+}
+.left
+{
+    position: absolute;
+    padding: 30px;
+
+}
+.msg h3
+{
+    margin-top: 30px;
+    font-size: 30px;
+    font-weight: bolder;
+    color: var(--seablue);
+}
+.btn
+{
+    border: 2px solid var(--violet);
+    border-radius: 5px;
+    padding: 15px 15px;
+    font-size: 20px;
+    display: inline-block;
+    position: absolute;
+    margin: 10px;
+    cursor: pointer;
+    background: none;
+    color: var(--violet);
+}
+.btn:hover, .foodImg.gameOn .btnG:hover
+{
+    background-color: var(--seablue);
+    color: white;
+    border: #17A2B8;
+}
+.Gdescription
+{
+    visibility: hidden;
+}
+.Gdescription.visibleG
+{
+    visibility: visible;
+}
+.content.oldWriteUp
+{
+    visibility: hidden;
+}
+.left.noImg
+{
+    visibility: hidden;
+}
+.container.oldWriteUp::before
+{
+    transform: translate(100% -50%);
+    right: 52%;
+}
+.foodImg
+{
+    visibility: hidden;
+}
+.foodImg.gameOn
+{
+    position: absolute;
+    top:150px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    visibility: visible;
+    margin-left: 80px;
+    text-align: center;
+}
+.foodImg.gameOn .btnG
+{
+    /* position: relative ;
+    top: 143px; */
+    position: absolute;
+    top: 460px;
+    border: 2px solid var(--violet);
+    border-radius: 5px;
+    padding: 15px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    background: none;
+    color: var(--violet);
+    margin-left: 20px;
+}
+.foodImg.gameOn .btnG.next
+{
+    visibility: hidden;
+}
+
+.gameOn img
+{
+    width: 100%;
+    height: 100%;
+}
+.foodImg.gameOn .ans
+{
+    text-transform: uppercase;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 50px;
+    /* border: 2px solid gray; */
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.foodImg.gameOn .ans div
+{
+    text-align: center;
+    width: 80px;
+    border-radius: 25%;
+    height: 80px;
+    padding: 15px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+.foodImg.gameOn .ans input
+{
+    text-transform: uppercase;
+    font-size: 50px;
+    border-radius: 75%;
+    font-weight: bolder;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    background-color: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+/* GAME */
+
+.foodImg.gameOn .ansCheck
+{
+    display: flex;
+    flex-direction: column;
+}
+
