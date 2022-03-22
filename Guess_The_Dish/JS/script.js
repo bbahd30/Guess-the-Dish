@@ -44,7 +44,8 @@ wordsAdder = (k) =>
                 counter=0;
                 //****************************************** */
                 // NEED TO ALSO ADD AN EVENT SHOWING CORRECT
-                alert("New Word");
+                writeUp2.querySelector("h3").innerText="Great, you recognised the dish, let's move on.";
+                writeUp2.querySelector("h2").innerText="";  
                 // document.remove(inputTags);
                 ans.innerHTML="";
                 quesConst="";
@@ -60,20 +61,16 @@ wordsAdder = (k) =>
         else if (document.getElementById(k).getAttribute("constPresent")!==userChar)
         {
             error--;
-            alert("false");
             writeUp2.querySelector("h3").innerText="Wrong, Try Again.";
             writeUp2.querySelector("h2").innerText="";
             clearInp(k);
-        }
-        else
-        {
-            alert(`You have ${error} chances left.`);
         }
         
     }
     else
     {
-        alert("Game Over");
+        writeUp2.querySelector("h3").innerText="Game Over.";
+        writeUp2.querySelector("h2").innerText=`You made ${quesConst.length-1} wrong guesses.`;
         clearInp(k);
     }
 }
@@ -135,7 +132,6 @@ imgGiver = ()=>
     return fetch(API)
     .then(response => response.json())
     .then(data => data.image)
-    // .catch(alert("Check your internet connection and try again."))
 }
 async function getNext ()
 {
