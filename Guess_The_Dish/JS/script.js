@@ -61,7 +61,8 @@ wordsAdder = (k) =>
         else if (document.getElementById(k).getAttribute("constPresent")!==userChar)
         {
             error--;
-            writeUp2.querySelector("h3").innerText="Wrong, Try Again.";
+            writeUp2.querySelector("h3").innerText="
+                , Try Again.";
             writeUp2.querySelector("h2").innerText="";
             clearInp(k);
         }
@@ -70,7 +71,7 @@ wordsAdder = (k) =>
     else
     {
         writeUp2.querySelector("h3").innerText="Game Over.";
-        writeUp2.querySelector("h2").innerText=`You made ${quesConst.length-1} wrong guesses.`;
+        writeUp2.querySelector("h2").innerText=`You made ${quesConst.length} wrong guesses.`;
         clearInp(k);
     }
 }
